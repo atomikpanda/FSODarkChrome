@@ -1,27 +1,3 @@
-chrome.runtime.onMessage.addListener(
-  function (request, sender, sendResponse) {
-
-    if (request.text == "pageload") {
-
-      var iconOn = request.iconOn
-
-      chrome.tabs.query(
-        { currentWindow: true, active: true },
-        function (tabs) {
-
-          if (iconOn == true) {
-            chrome.browserAction.setIcon({ path: "icon.png", tabId: tabs[0].id });
-
-          } else {
-            chrome.browserAction.setIcon({ path: "off.png", tabId: tabs[0].id });
-          }
-
-        })
-
-      
-    }
-  })
-
 chrome.browserAction.onClicked.addListener(function (tab) {
   chrome.tabs.query({}, function (tabs) {
 

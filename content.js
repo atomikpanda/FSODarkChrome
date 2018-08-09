@@ -48,9 +48,6 @@ getToggle(function (value) {
   } else {
     // do nothing since the css isnt loaded
   }
-
-  chrome.extension.sendMessage({ text: "pageload", iconOn: value }, function (response) {
-  })
 })
 
 function getToggle(callback) { // expects function(value){...}
